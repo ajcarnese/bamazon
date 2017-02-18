@@ -4,7 +4,7 @@ var inquirer = require('inquirer');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'C0c0nuts!',
+    password: '',
     database: 'bamazon_db',
 });
 
@@ -22,16 +22,11 @@ connection.query('SELECT * from products', function(error, results, fields) {
             inquirer.prompt([{
                 type: "input",
                 name: "quantity",
-                message: "Set the quantity you wish to purchase of: " + results.product_name
+                message: "Set the quantity you wish to purchase:"
             }]).then(function(data) {
-            	     // connection.query('INSERT into dranken_beers SET ?', {
-                  //   beer_id: data.beer_id,
-                  //   dranker_id: dranker
-                }, function(error, results, fields) {
-                    if (!error) return ('it worked!')
+		  console.log("it worked!");
+                })
                     connection.end();
                 });
             });
         });
-
-    });
