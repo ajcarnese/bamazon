@@ -52,7 +52,7 @@ function updateQuantity(quantity, product) {
     });
 }
 
-connection.query('SELECT * from products', function(error, results, fields) {
+connection.query('SELECT id, product_name from products', function(error, results, fields) {
 
 console.log(results);
 
@@ -65,19 +65,7 @@ console.log(results);
         checkIdExists(results, data.id);
        
 
-        // connection.query('SELECT * from products', function(error, results, fields) {
-        //     inquirer.prompt([{
-        //         type: "input",
-        //         name: "quantity",
-        //         message: "Set the quantity you wish to purchase:"
-        //     }]).then(function(data) {
-        //         // console.log(results.product_id)
-
-        //         })
-        //             connection.end();
+                    connection.end();
  
- 
-
-        //         });//closing line 29 connection query
-            });//closing product_id function
+             });//closing product_id function
         });//closing line 18 connection query
